@@ -9,7 +9,35 @@
 
 ##### 필수 요구사항
 
+###### 웹 서비스 요구사항
+- 웹 인터페이스 필요
+- Firebase Auth를 통해 Github 로그인 구현
+- 사용자의 ID 생성 및 Access Token 등록
+- 저장소 CI/CD 활성화 비활성화 토글
+- 사용자 저장소 목록, 설정 파일 읽어오기
 
+###### Agent 관리자 요구사항
+- 분산된 Agent 그룹과 비동기 통신 및 관리
+
+###### Agent 요구사항
+- Docker 컨테이너를 관리하는 프로세스 필요
+- 설정파일에 따라 Image Pulling 및 컨테이너 생성
+- 컨테이너 삭제, 저장소 Clone, 사용자 스크립트 실행
+
+# 구현환경
+
+사용할 도구는 다음과 같습니다.
+- Spring Cloud Gateway
+- Docker (docker-swarm on)
+- Spring Boot
+- Spring Cloud Eureka (Service Registry )
+- Angular 12
+
+- 시스템 구성도
+
+# API 스펙 문서
+
+# 설치 환경 및 데모 서비스 캡쳐
 
 # 시스템의 개요 및 구현환경
 ##### 본인이 개발하고자 하는 시스템의 개요를 설명
