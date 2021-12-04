@@ -27,7 +27,7 @@ System_Boundary(swarm, "Docker Swarm Worker", "컨테이너 관리"){
     Container(api, "Main API", "java", "웹 페이지 API 제공, \nGithub API/Webhook 연계", $sprite="spring")
     ComponentDb(db, "RDBMS", "postgres", "사용자 정보\n프로젝트 별 CI/CD 결과", $sprite="postgresql")
     Container(controller, "Controller API", "java", "CI/CD 작업 및 Worker 관리", $sprite="spring")
-    Container(nosql, "NoSQL", "mongodb", "CI/CD 처리 상태", $sprite="mongodb")
+    Container(nosql, "NoSQL", "mongodb", "등록된 Worker 목록\nCI/CD 처리 상태", $sprite="mongodb")
     ComponentQueue(rabbit, "Message Queue", "RabbitMQ", "CI/CD Job 큐", $sprite="cloud_queue")
 }
 System_Boundary(workers, "CI/CD Job Worker 그룹"){
@@ -42,7 +42,7 @@ System_Boundary(workers, "CI/CD Job Worker 그룹"){
 
 Rel(user, ingress, "http://myservice/ 접속")
 Rel(workers, ingress, "message queue pub/sub")
-Rel(workers, ingress, "register each service name")
+Rel(workers, ingress, "register itself")
 Rel(ingress, gateway, "http:80 (web)")
 Rel(ingress, rabbit, "message queue pub/sub")
 Rel(gateway, apache, "routing")
