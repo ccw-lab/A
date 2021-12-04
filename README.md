@@ -23,11 +23,10 @@
 - 설정파일에 따라 Image Pulling 및 컨테이너 생성
 - 컨테이너 삭제, 저장소 Clone, 사용자 스크립트 실행
 
-### 구현환경
+###### 구현환경
 
 - 구현환경 설명
 
-###### 개발도구
 - Github API: 외부 API 연계
 - Postgres Database: 영구적으로 데이터 저장 (RDBMS)
 - MongoDB: 비정형 데이터 저장 (NoSQL)
