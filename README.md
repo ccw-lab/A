@@ -3,7 +3,7 @@
 
 ##### 주요 목표
 - [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)와 같은 레퍼런스 플랫폼이다.
-- Github 연동, 컨테이너 생성, 삭제, 사용자 정의 스크립트 실행 등의 최소한의 기능만 포함한다.
+- Github API 연동, 컨테이너 생성, 삭제, 사용자 정의 스크립트 실행 등의 최소한의 기능만 포함한다.
 - MSA 아키텍처를 활용하여 시스템을 개발한다.
 - 최소한의 요구사항만 고려하여 개발을 진행한다.
 
@@ -27,11 +27,11 @@
 # 구현환경
 
 사용할 도구는 다음과 같습니다.
-- Spring Cloud Gateway
-- Docker (docker-swarm on)
-- Spring Boot
-- Spring Cloud Eureka (Service Registry )
-- Angular 12
+- Spring Cloud Gateway: 인증, 라우팅
+- Docker (docker-swarm mode): 컨테이너 플랫폼
+- Spring Cloud Eureka (Service Discovery): 서비스 이름 등록/조회
+- Spring Boot: 웹 페이지 API 제공
+- Angular 12: 프론트엔드
 
 - 시스템 구성도
 
