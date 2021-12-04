@@ -1,0 +1,55 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define DEVICONS2 https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
+!define MATERIAL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/material
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/angular.puml
+!include DEVICONS/java.puml
+!include DEVICONS/mongodb.puml
+!include DEVICONS/angular.puml
+!include DEVICONS/github.puml
+!include DEVICONS/database.puml
+!include DEVICONS2/docker.puml
+!include DEVICONS2/spring.puml
+!include DEVICONS2/postgresql.puml
+!include MATERIAL/cloud_queue.puml
+!include FONTAWESOME/users.puml
+
+Person(user, "사용자")
+System_Ext(github, "Github API", $sprite="github")
+Component(ingress, "docker swarm", "ingress network")
+System_Boundary(swarm, "Docker Swarm Worker", "컨테이너 관리"){
+    Container(gateway, "Gateway", "spring cloud gateway", "API 게이트웨이", $sprite="spring")
+    Container(apache, "SPA", "apache web server, angular", "사용자 인터페이스 제공", $sprite="angular")
+    Container(api, "Main API", "java", "웹 페이지 API 제공, \nGithub API/Webhook 연계", $sprite="spring")
+    ComponentDb(db, "RDBMS", "postgres", "사용자 정보\n프로젝트 별 CI/CD 결과", $sprite="postgresql")
+    Container(controller, "Controller API", "java", "CI/CD 작업 및 Worker 관리", $sprite="spring")
+    Container(nosql, "NoSQL", "mongodb", "CI/CD 처리 상태", $sprite="mongodb")
+    ComponentQueue(rabbit, "Message Queue", "RabbitMQ", "CI/CD Job 큐", $sprite="cloud_queue")
+}
+System_Boundary(workers, "CI/CD Job Worker 그룹"){
+    System(worker1, "CI/CD Job Worker 1", "Docker Engine Controller", $sprite="java"){
+        Container(docker1, "Docker Engine", "docker", $sprite="docker")
+
+    }
+    System(worker2, "CI/CD Job Worker 2", "Docker Engine Controller", $sprite="java"){
+        Container(docker2, "Docker Engine", "docker", $sprite="docker")
+    }
+}
+
+Rel(user, ingress, "http://myservice/ 접속")
+Rel(workers, ingress, "message queue pub/sub")
+Rel(workers, ingress, "register each service name")
+Rel(ingress, gateway, "http:80 (web)")
+Rel(ingress, rabbit, "message queue pub/sub")
+Rel(gateway, apache, "routing")
+Rel(gateway, api, "routing")
+Rel(api, db, "jdbc")
+BiRel(api, rabbit, "pub/sub")
+Rel(api, github, "https")
+Rel(controller, nosql, "connector")
+BiRel(controller, rabbit, "pub/sub")
+@enduml
