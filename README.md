@@ -34,8 +34,8 @@
 - Spring Cloud Gateway: API 게이트웨이, 인증, 라우팅
 - Docker (docker-swarm mode): 컨테이너 플랫폼
 - Spring Cloud Eureka (Service Discovery): 서비스 이름 등록/조회
-- Spring Boot: 웹 페이지 API 제공
-- Angular 12: 프론트엔드
+- Spring Boot: Rest API 구현
+- Angular 12: 프론트엔드 개발도구
 
 ###### 시스템 구성도
 
