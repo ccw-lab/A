@@ -39,6 +39,7 @@
 
 ###### 시스템 구성도
 
+![class-diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/ccw-lab/A/main/arch.puml)
 
 ###### 설치 환경 및 데모 서비스 캡쳐
 
