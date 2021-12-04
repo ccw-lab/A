@@ -27,6 +27,7 @@
 
 Docker를 기본 인프라로 사용한다. API 서버간 비동기 통신을 위해 RabbitMQ를 사용하며, 요청된 작업 상태관리를 위해 MongoDB를 사용한다.
 영구적으로 관리되어야 하는 데이터는 Postgres Database를 활용한다. 사용자 인터페이스는 Angular를 사용하며, OAuth 인증을 위해 Firebase Auth 라이브러리를 적용한다.
+CI/CD 처리 트랜잭션에 Choreography-Based Saga 패턴을 적용한다.
 
 - Github API: 외부 API 연계
 - Postgres Database: 영구적으로 데이터 저장 (RDBMS)
@@ -38,6 +39,7 @@ Docker를 기본 인프라로 사용한다. API 서버간 비동기 통신을 �
 - Spring Boot: Rest API 구현
 - Spring Cloud Circuit Breaker: Resiliency 구현
 - Angular 12: 프론트엔드 개발도구
+
 
 ###### 시스템 구성도
 
