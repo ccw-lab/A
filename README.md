@@ -27,7 +27,11 @@
 # 구현환경
 
 사용할 도구는 다음과 같습니다.
-- Spring Cloud Gateway: 인증, 라우팅
+- Github API: 외부 API 연계
+- Postgres Database: 영구적으로 데이터 저장 (RDBMS)
+- MongoDB: 비정형 데이터 저장 (NoSQL)
+- Spring Cloud Stream & RabbitMQ: 서비스간 비동기 메시지 통신
+- Spring Cloud Gateway: API 게이트웨이, 인증, 라우팅
 - Docker (docker-swarm mode): 컨테이너 플랫폼
 - Spring Cloud Eureka (Service Discovery): 서비스 이름 등록/조회
 - Spring Boot: 웹 페이지 API 제공
