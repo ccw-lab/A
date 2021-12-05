@@ -36,8 +36,9 @@ CI/CD 처리 트랜잭션에 Choreography-Based Saga 패턴을 적용한다.
 - Spring Cloud Gateway: API 게이트웨이, 인증, 라우팅
 - Docker (docker-swarm mode): 컨테이너 플랫폼
 - Spring Cloud Eureka (Service Discovery): 서비스 이름 등록/조회
-- Spring Boot: Rest API 구현
 - Spring Cloud Circuit Breaker: Resiliency 구현
+- Spring Boot: Rest API 구현
+- MyBatis3 or JPA: 데이터베이스 연결
 - Angular 12: 프론트엔드 개발도구
 
 
