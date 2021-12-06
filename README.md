@@ -153,4 +153,4 @@ Docker Swarm를 서비스 구동을 위한 플랫폼으로 사용한다. 서비�
 ##### RabbitMQ
 
 - 인가되지 않은 Worker가 접속할 수 없도록 인증을 사용한다.
-- 2가지 채널을 운영한다. (controller 채널과 worker 채널, 필요에 따라 증가할 수 있음) 
+- 2가지 큐를 운영한다. (controller, worker)(필요에 따라 증가할 수 있음) 
