@@ -26,7 +26,7 @@ System_Boundary(swarm, "Docker Swarm Worker", "컨테이너 관리"){
     Container(apache, "SPA", "apache web server, angular", "사용자 인터페이스 제공", $sprite="angular")
     Container(api, "Main API", "java", "웹 페이지 API 제공, \nGithub API/Webhook 연계", $sprite="spring")
     ComponentDb(db, "RDBMS", "postgres", "사용자 정보\n프로젝트 별 CI/CD 결과", $sprite="postgresql")
-    Container(controller, "Controller API", "java", "CI/CD 작업 및 Worker 관리", $sprite="spring")
+    Container(controller, "Controller Service", "java", "CI/CD 작업 및 Worker 관리", $sprite="spring")
     Container(nosql, "NoSQL", "mongodb", "등록된 Worker 목록\nCI/CD 처리 상태", $sprite="mongodb")
     ComponentQueue(rabbit, "Message Queue", "RabbitMQ", "CI/CD Job 큐", $sprite="cloud_queue")
 }
