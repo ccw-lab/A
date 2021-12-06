@@ -57,6 +57,8 @@ Docker Swarm를 서비스 구동을 위한 플랫폼으로 사용한다. 서비�
 
 ##### API 게이트웨이
 
+- API 요청 라우팅, JWT 생성, 인증 등을 수행한다.
+
 ###### Github OAuth 로그인 후 JWT 생성요청 절차
 1. 사용자는 OAuth 로그인을 수행한 뒤 Github access token을 API 게이트웨이(/getjwt)로 보낸다.
 2. access token과 Github API를 통해 사용자 아이디를 검색한다.
@@ -74,7 +76,8 @@ Docker Swarm를 서비스 구동을 위한 플랫폼으로 사용한다. 서비�
 
 ##### Main 서비스 
 
-- 항상 사용자의 요청에 따라 CI/CD 작업을 시작한다.
+- 웹 페이지에 필요한 API를 제공한다.
+- 사용자의 요청에 따라 CI/CD 작업을 시작 및 중지한다.
 
 ###### Github API 연계기능
 - 사용자의 JWT 토큰을 이용하여 access token을 가져올 수 잇다.
@@ -98,6 +101,10 @@ Docker Swarm를 서비스 구동을 위한 플랫폼으로 사용한다. 서비�
 2. RabbitMQ를 통해 상태 보고를 받고 데이터베이스를 업데이트 한다.
 
 ##### Controller 서비스
+
+- 다른 서비스와 비동기 메시지 큐를 통해 통신한다.
+- Worker 목록을 관리한다.
+- 적절한 Worker를 선택하여 CI/CD 작업을 요청한다.
 
 ###### CI/CD 작업요청 절차
 1. Main 서비스로 부터 작업요청을 받는다.
