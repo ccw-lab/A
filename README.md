@@ -1,3 +1,12 @@
+# Necessary components for Tiny Ci
+### Postgres
+
+You can browse objects of postgres by opening localhost:5433 with postgres/example.
+
+- [db-up.bat](scripts/db-up.bat) : Start a postgres container up.
+- [db-down.bat](scripts/db-down.bat) : Clean up a postgres container.
+- [db-stop.bat](scripts/db-stop.bat) : Stop up a postgres container.
+
 # Lightweight CI/CD 플랫폼
 ### 시스템 개요 및 구현환경
 Github 소스코드 자동화 테스트/빌드/배포를 도와주기 위해 최소한의 기능만 포함한 Lightweight CI/CD 플랫폼을 개발하는 것이 목적이다.

@@ -1,0 +1,1 @@
+consul agent -config-file=..\consul\test.hcl -dev
