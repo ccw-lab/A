@@ -1,15 +1,20 @@
 [submodule "projects/tiny-ci-gateway"]
 	path = projects/tiny-ci-gateway
 	url = https://github.com/ccw-lab/tiny-ci-gateway
+    branch = master
 [submodule "projects/tiny-ci-worker"]
 	path = projects/tiny-ci-worker
 	url = https://github.com/ccw-lab/tiny-ci-worker
+    branch = master
 [submodule "projects/tiny-ci-controller"]
 	path = projects/tiny-ci-controller
 	url = https://github.com/ccw-lab/tiny-ci-controller
+    branch = master
 [submodule "projects/tiny-ci-main"]
 	path = projects/tiny-ci-main
 	url = https://github.com/ccw-lab/tiny-ci-main
+    branch = master
 [submodule "projects/tiny-ci-angular"]
 	path = projects/tiny-ci-angular
 	url = https://github.com/ccw-lab/tiny-ci-angular
+    branch = master
